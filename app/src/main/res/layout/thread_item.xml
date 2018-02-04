@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="#27373c"
+    app:cardElevation="2dp"
+    android:layout_marginTop="12dp"
+    app:layout_collapseParallaxMultiplier="1.0">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:descendantFocusability="afterDescendants"
+        android:padding="16dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgAvatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="perfilImage" />
+
+        <TextView
+            android:id="@+id/lblPostUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="User"
+            style="@style/Base.TextAppearance.AppCompat.Subhead"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:fontFamily="sans-serif"
+            android:typeface="normal"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:textAlignment="viewStart"
+            android:layout_gravity="start"
+            android:textColor="#78b6a2"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/imgAvatar"
+            android:layout_toEndOf="@+id/imgAvatar"
+            android:paddingLeft="16dp"/>
+
+        <TextView
+            android:id="@+id/lblPostUserDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Subnickname"
+            style="@style/Base.TextAppearance.AppCompat.Body2"
+            android:textColor="#568177"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textAlignment="viewStart"
+            android:layout_gravity="start"
+            android:fontFamily="sans-serif-thin"
+            android:paddingLeft="24dp"
+            android:layout_below="@+id/lblPostUsername"
+            android:layout_toRightOf="@+id/imgAvatar"
+            android:layout_toEndOf="@+id/imgAvatar" />
+
+        <TextView
+            android:id="@+id/lblPostDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text=" Ayer, 13:20"
+            style="@style/Base.TextAppearance.AppCompat.Body2"
+            android:textColor="#568177"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textAlignment="viewStart"
+            android:layout_gravity="start"
+            android:fontFamily="sans-serif-thin"
+            android:paddingRight="8dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#3e151d20"
+            android:layout_below="@+id/imgAvatar"/>
+
+        <TextView
+            android:id="@+id/lblPostContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:typeface="normal"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:textAlignment="viewStart"
+            android:layout_gravity="start"
+            android:paddingTop="16dp"
+            android:layout_below="@+id/divider"
+            tools:text="Content"
+            android:textColor="#78b6a2"
+            />
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

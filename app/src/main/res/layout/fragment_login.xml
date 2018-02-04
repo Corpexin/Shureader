@@ -1,0 +1,176 @@
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient_selector">
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/logo"
+        app:layout_heightPercent="10%"
+        app:layout_marginLeftPercent="25%"
+        app:layout_marginTopPercent="20%"
+        app:layout_widthPercent="50%" />
+
+    <android.support.percent.PercentRelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/rounded_edittext"
+        app:layout_heightPercent="6%"
+        app:layout_marginLeftPercent="18%"
+        app:layout_marginTopPercent="42%"
+        app:layout_widthPercent="65%">
+
+        <ImageView
+            android:id="@+id/ivUserIcon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/usericon"
+            app:layout_heightPercent="85%"
+            app:layout_marginLeftPercent="5%"
+            app:layout_marginTopPercent="25%"
+            app:layout_marginBottomPercent="25%"
+            app:layout_widthPercent="8%" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/separator"
+            app:layout_heightPercent="85%"
+            app:layout_marginLeftPercent="14%"
+            app:layout_marginTopPercent="20%"
+            app:layout_marginBottomPercent="20%"
+            app:layout_widthPercent="10%" />
+
+        <EditText
+            android:id="@+id/etUsername"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_heightPercent="100%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="5%"
+            app:layout_marginTopPercent="0%"
+            app:layout_marginBottomPercent="0%"
+            app:layout_widthPercent="75%"
+            android:background="@null"
+            android:cursorVisible="false"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:maxLength="16"
+            android:textColor="#78b6a2"
+            android:hint="@string/usuario"
+            android:ellipsize="start"
+            android:fontFamily="sans-serif-thin"
+            android:textColorHint="#78b6a2"
+            android:inputType="textPersonName" />
+
+    </android.support.percent.PercentRelativeLayout>
+
+    <android.support.percent.PercentRelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/rounded_edittext"
+        app:layout_heightPercent="6%"
+        app:layout_marginLeftPercent="18%"
+        app:layout_marginTopPercent="55%"
+        app:layout_widthPercent="65%">
+
+        <ImageView
+            android:id="@+id/ivPassword"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/password"
+            app:layout_heightPercent="85%"
+            app:layout_marginLeftPercent="5%"
+            app:layout_marginTopPercent="25%"
+            app:layout_marginBottomPercent="25%"
+            app:layout_widthPercent="8%" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/separator"
+            app:layout_heightPercent="85%"
+            app:layout_marginLeftPercent="14%"
+            app:layout_marginTopPercent="20%"
+            app:layout_marginBottomPercent="20%"
+            app:layout_widthPercent="10%" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_heightPercent="100%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="5%"
+            app:layout_marginTopPercent="0%"
+            app:layout_marginBottomPercent="0%"
+            app:layout_widthPercent="75%"
+            android:background="@null"
+            android:cursorVisible="false"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:maxLength="16"
+            android:textColor="#78b6a2"
+            android:hint="@string/contrase_a"
+            android:ellipsize="start"
+            android:fontFamily="sans-serif-thin"
+            android:textColorHint="#78b6a2"
+            android:inputType="textPassword" />
+
+    </android.support.percent.PercentRelativeLayout>
+
+    <TextView android:id="@+id/tvMensaje"
+        android:text="@string/conectando"
+        android:textColor="#78b6a2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="4%"
+        app:layout_marginLeftPercent="8%"
+        app:layout_marginTopPercent="67%"
+        app:layout_widthPercent="85%"
+        android:fontFamily="sans-serif-thin"
+        android:gravity="center_horizontal"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/btnConect"
+        android:text="@string/conectar"
+        android:textColor="#2d3e46"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/buttonshape"
+        app:layout_heightPercent="6%"
+        app:layout_marginLeftPercent="28%"
+        app:layout_marginTopPercent="75%"
+        app:layout_widthPercent="45%"
+        android:textAllCaps="false"
+        android:textSize="16sp"/>
+
+    <ProgressBar
+        android:id="@+id/pbLoading"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:indeterminateDrawable="@drawable/progress_bar_custom"
+        app:layout_heightPercent="12%"
+        app:layout_marginLeftPercent="42%"
+        app:layout_marginTopPercent="72%"
+        app:layout_widthPercent="18%"
+        android:visibility="gone"/>
+
+    <TextView android:id="@+id/tvOlvido"
+        android:text="@string/olvidaste_la_contrase_a"
+        android:textColor="#78b6a2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="4%"
+        app:layout_marginLeftPercent="23%"
+        app:layout_marginTopPercent="88%"
+        app:layout_widthPercent="55%"
+        android:fontFamily="sans-serif-thin"
+        android:clickable="true"
+        android:gravity="center_horizontal" />
+    </android.support.percent.PercentRelativeLayout>

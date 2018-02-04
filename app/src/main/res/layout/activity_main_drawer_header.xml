@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="78dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Light"
+    tools:ignore="Overdraw"
+    android:paddingTop="@dimen/navigation_drawer_paddingLeft"
+    android:paddingLeft="@dimen/navigation_drawer_paddingLeft"
+    android:paddingStart="@dimen/navigation_drawer_paddingLeft"
+    android:paddingRight="@dimen/navigation_drawer_paddingRight"
+    android:paddingEnd="@dimen/navigation_drawer_paddingRight"
+    android:paddingBottom="@dimen/navigation_drawer_header_marginBottom"
+    android:background="#28383e">
+
+
+    <TextView
+        android:id="@+id/lblUserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_vertical"
+        android:text="Corpex"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#78b6a2" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_vertical"
+        android:text="Jijijaja"
+        android:layout_below="@id/lblUserName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="24sp"
+        android:textColor="#78b6a2" />
+
+</RelativeLayout>

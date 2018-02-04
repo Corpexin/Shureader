@@ -1,0 +1,73 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="corpex.shureader.fragments.ContentFragment"
+    android:background="@drawable/background_gradient_selector">
+
+
+   <android.support.design.widget.AppBarLayout
+       android:id="@+id/appbar"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+      <android.support.v7.widget.Toolbar
+          android:id="@+id/toolbar"
+          android:layout_width="match_parent"
+          android:layout_height="?attr/actionBarSize"
+          android:background="?attr/colorPrimary"
+          app:layout_scrollFlags="scroll|enterAlways"
+          app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+         <ImageView
+             android:id="@+id/ivLogo"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:contentDescription="@string/image"
+             android:src="@drawable/logorees"
+             android:padding="20dp"
+             android:visibility="visible"
+             />
+
+          </android.support.v7.widget.Toolbar>
+
+   </android.support.design.widget.AppBarLayout>
+
+   <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swlPanel"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/appbar"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior" >
+
+      <android.support.v7.widget.RecyclerView
+          android:id="@+id/lstContent"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:divider="@android:color/transparent"
+          android:fadeScrollbars="false"
+         />
+   </android.support.v4.widget.SwipeRefreshLayout>
+
+
+
+   <TextView
+       android:id="@+id/lblEmpty"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:gravity="center"
+       android:text="@string/no_results"
+       android:visibility="gone"/>
+
+   <ProgressBar
+       style="@style/Widget.AppCompat.ProgressBar"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/pbAnillo"
+       android:layout_gravity="center"
+       android:layout_centerVertical="true"
+       android:layout_centerHorizontal="true"
+       android:indeterminate="false" />
+</android.support.design.widget.CoordinatorLayout>

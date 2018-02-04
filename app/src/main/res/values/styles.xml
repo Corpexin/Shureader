@@ -1,11 +1,21 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">#28383e</item> <!--toolbar -->
+        <item name="colorPrimaryDark">#28383e</item> <!--status bar -->
+        <item name="colorAccent">#78b6a2</item>
     </style>
 
+    <style name="NavigationViewTheme" parent="AppTheme">
+        <item name="textAppearanceListItem">@style/TextAppearance.AppCompat.Body2</item>
+    </style>
+
+    <!-- ToolBar -->
+    <style name="ToolBarStyle" parent="AppTheme">
+        <item name="android:textColorPrimary">#78b6a2</item>
+        <item name="android:textColorSecondary">#78b6a2</item>
+        <item name="actionMenuTextColor">#78b6a2</item>
+    </style>
 </resources>

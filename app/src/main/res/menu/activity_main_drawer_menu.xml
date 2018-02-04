@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single" android:id="@+id/group1">
+        <item
+            android:id="@+id/itemGeneral"
+            android:icon="@drawable/usericon"
+            android:title="General" />
+
+        <item
+            android:id="@+id/itemElectronicaInf"
+            android:icon="@drawable/usericon"
+            android:title="Electrónica / Informática" />
+
+        <item
+            android:id="@+id/itemEmpleo"
+            android:icon="@drawable/usericon"
+            android:title="Empleo" />
+
+        <item
+            android:id="@+id/itemViajes"
+            android:icon="@drawable/usericon"
+            android:title="Viajes" />
+
+        <item
+            android:id="@+id/itemQuedadas"
+            android:icon="@drawable/usericon"
+            android:title="Quedadas" />
+
+        <item
+            android:id="@+id/itemInverForo"
+            android:icon="@drawable/usericon"
+            android:title="InverForo" />
+
+    </group>
+    <group android:checkableBehavior="single"  android:id="@+id/group2">
+        <item
+            android:id="@+id/itemForocoches"
+            android:icon="@drawable/usericon"
+            android:title="ForoCcoches" />
+
+        <item
+            android:id="@+id/itemCompeticion"
+            android:icon="@drawable/usericon"
+            android:title="Competición" />
+
+        <item
+            android:id="@+id/itemClasicos"
+            android:icon="@drawable/usericon"
+            android:title="Clásicos" />
+
+        <item
+            android:id="@+id/itemMonovolúmenes"
+            android:icon="@drawable/usericon"
+            android:title="Monovolúmenes" />
+
+        <item
+            android:id="@+id/item4por4"
+            android:icon="@drawable/usericon"
+            android:title="4x4 / Ocio" />
+
+        <item
+            android:id="@+id/itemCamiones"
+            android:icon="@drawable/usericon"
+            android:title="Camiones / Furgonetas / Autobuses" />
+
+        <item
+            android:id="@+id/itemMotos"
+            android:icon="@drawable/usericon"
+            android:title="Motos" />
+    </group>
+    <group android:checkableBehavior="single"   android:id="@+id/group3">
+        <item
+            android:id="@+id/itemMecanica"
+            android:icon="@drawable/usericon"
+            android:title="Mecánicca" />
+
+        <item
+            android:id="@+id/itemCarAudio"
+            android:icon="@drawable/usericon"
+            android:title="Car-Audio" />
+
+        <item
+            android:id="@+id/itemSeguros"
+            android:icon="@drawable/usericon"
+            android:title="Seguros" />
+
+        <item
+            android:id="@+id/itemTrafio"
+            android:icon="@drawable/usericon"
+            android:title="Tráfico / Radares" />
+
+        <item
+            android:id="@+id/itemTuning"
+            android:icon="@drawable/usericon"
+            android:title="Tuning" />
+
+    </group>
+    <group android:checkableBehavior="single"  android:id="@+id/group4">
+        <item
+            android:id="@+id/itemJuegosCoche"
+            android:icon="@drawable/usericon"
+            android:title="Juegos de Coches" />
+
+        <item
+            android:id="@+id/itemJuegosOnline"
+            android:icon="@drawable/usericon"
+            android:title="Juegos Online" />
+
+    </group>
+    <group android:checkableBehavior="single"  android:id="@+id/group5">
+        <item
+            android:id="@+id/itemPlanPive"
+            android:icon="@drawable/usericon"
+            android:title="Plan PIVE 8" />
+
+        <item
+            android:id="@+id/itemCompraVentaProf"
+            android:icon="@drawable/usericon"
+            android:title="Compra - Venta Profesional" />
+
+    </group>
+    <group android:checkableBehavior="single"  android:id="@+id/group6">
+        <item
+            android:id="@+id/itemCompraVentaMotor"
+            android:icon="@drawable/usericon"
+            android:title="Compra - Venta Motor" />
+
+        <item
+            android:id="@+id/itemCompraVentaAudio"
+            android:icon="@drawable/usericon"
+            android:title="Compra - Venta Audio / Tuning" />
+
+        <item
+            android:id="@+id/itemCompraVentaElectronica"
+            android:icon="@drawable/usericon"
+            android:title="Compra - Venta Electrónica" />
+
+        <item
+            android:id="@+id/itemCompraVentaGeneral"
+            android:icon="@drawable/usericon"
+            android:title="Compra - Venta General" />
+
+    </group>
+    <group android:checkableBehavior="single"  android:id="@+id/group7">
+        <item
+            android:id="@+id/itemInfo"
+            android:icon="@drawable/usericon"
+            android:title="Info / Ayuda" />
+
+        <item
+            android:id="@+id/itemPruebas"
+            android:icon="@drawable/usericon"
+            android:title="Pruebas" />
+
+    </group>
+</menu>
