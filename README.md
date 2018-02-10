@@ -1,7 +1,7 @@
 # Shureader
 Aplicación no oficial para Forocoches en Android
 
-A diferencia del resto de aplicaciones que existen de forocoches, aquí hacemos una conversion de los elementos webs a componentes android nativos.
+A diferencia del resto de aplicaciones que existen de forocoches, aquí hacemos una conversión de los elementos webs a componentes android nativos.
 No se siente como una página web, sino como una aplicación real =P
 
 Elementos existentes:
