@@ -2,12 +2,20 @@
     android:orientation="vertical" android:layout_width="fill_parent"
     android:layout_height="fill_parent">
 
+    <com.pierfrancescosoffritti.youtubeplayer.player.YouTubePlayerView
+        android:id="@+id/youtube_player_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <ImageView android:layout_width="fill_parent"
         android:layout_height="fill_parent" android:id="@+id/iv_preview_image" />
+
 
 
     <Button android:layout_width="wrap_content"
         android:layout_height="wrap_content"   android:background="@android:drawable/btn_dialog"
         android:id="@+id/btnIvClose" android:layout_alignParentRight="true"
         android:layout_alignParentTop="true" />
+
+
 </RelativeLayout>

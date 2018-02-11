@@ -78,7 +78,7 @@ public class Parser {
             subNick = row.select("tr:eq(1) > td:eq(0) > div:eq(1)").text();
             perfilUrl = "https:" + row.select("tr:eq(1) > td:eq(0) > div:eq(2) > a > img").attr("src");//.substring(2);
             contentHTML = row.select("td[id^=td_post_]").html();
-            contentHTML = contentHTML.replaceAll("div", "BlockQuote").replaceAll("<script language=\"javascript\"> \\r\\n<!--\\r\\nverVideo\\('", "<img class=\\\"imgpost\\\" src=\\\"http://img.youtube.com/vi/").replaceAll("','\\d+'\\);\\r\\n-->\\r\\n</script>", "/0.jpg\\\" border=\\\"0\\\" alt=\\\"\\\">");
+            contentHTML = contentHTML.replaceAll("div", "BlockQuote").replaceAll("googletag\\.cmd\\.push\\(function\\(\\) \\{ googletag\\.display\\(\'BlockQuote-300x250\'\\); \\}\\);", "").replaceAll("googletag\\.cmd\\.push\\(function\\(\\) \\{ googletag\\.display\\(\'div-300x250\'\\); \\}\\);", "").replaceAll("<script language=\"javascript\"> \\r\\n<!--\\r\\nverVideo\\('", "<img class=\\\"imgpost\\\" src=\\\"http://img.youtube.com/vi/").replaceAll("','\\d+'\\);\\r\\n-->\\r\\n</script>", "/0.jpg\\\" border=\\\"0\\\" alt=\\\"\\\">");
             result.getPosts().add(new ThreadItem(nombreUsuario, perfilUrl, subNick, fecha, contentHTML));
             System.out.println("#####################################################");
         }

@@ -13,6 +13,7 @@ import android.graphics.drawable.LayerDrawable;
 import android.graphics.drawable.LevelListDrawable;
 import android.os.AsyncTask;
 import android.os.Build;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.text.Spannable;
@@ -34,6 +35,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.pierfrancescosoffritti.youtubeplayer.player.AbstractYouTubePlayerListener;
+import com.pierfrancescosoffritti.youtubeplayer.player.YouTubePlayer;
+import com.pierfrancescosoffritti.youtubeplayer.player.YouTubePlayerInitListener;
+import com.pierfrancescosoffritti.youtubeplayer.player.YouTubePlayerView;
 import com.squareup.picasso.Picasso;
 
 import java.io.File;
@@ -206,6 +211,22 @@ public class ThreadAdapter  extends RecyclerView.Adapter<RecyclerView.ViewHolder
                     ImageView ivPreview = (ImageView)nagDialog.findViewById(R.id.iv_preview_image);
                     Picasso.with(context).load(span.getSource()).placeholder(context.getResources().getDrawable(R.drawable.placeholder)).error(context.getResources().getDrawable(R.drawable.placeholder)).into(ivPreview);
 
+                    //Implementacion de vista con reproductor para los videos. Deberia hacer un refactor del codigo ya mismo...
+                    YouTubePlayerView youTubePlayerView = nagDialog.findViewById(R.id.youtube_player_view);
+                    ((AppCompatActivity)context).getLifecycle().addObserver(youTubePlayerView);
+                    youTubePlayerView.initialize(new YouTubePlayerInitListener() {
+                        @Override
+                        public void onInitSuccess(final YouTubePlayer initializedYouTubePlayer) {
+                            initializedYouTubePlayer.addListener(new AbstractYouTubePlayerListener() {
+                                @Override
+                                public void onReady() {
+                                    String videoId = "6JYIGclVQdw";
+                                    initializedYouTubePlayer.loadVideo(videoId, 0);
+                                }
+                            });
+                        }
+                    }, true);
+
                     btnClose.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View arg0) {
@@ -348,7 +369,7 @@ class ImageGetterAsyncTask extends AsyncTask<TextView, Void, Bitmap> {
             if((size.x * 0.8f) / bitmap.getWidth() <= 1) { //En caso de que la imagen sea mayor que la pantalla, la anchura sera el ancho de la pantalla
                 anchura = Math.round(size.x*0.8f);
                 altura = Math.round(((size.x*0.8f)/bitmap.getWidth())*bitmap.getHeight());
-            }else { //Si la imagen es menor necesitamos obtner el multiplicador
+            }else { //Si la imagen es menor necesitamos obtener el multiplicador
                 float multiplicador = (size.x * 0.8f) / bitmap.getWidth();
                 if(multiplicador > 3) //Para las imagenes muy pequeñas, solo aumentamos hasta 3 veces
                     multiplicador = 3;
