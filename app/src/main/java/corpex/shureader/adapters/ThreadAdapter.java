@@ -208,24 +208,33 @@ public class ThreadAdapter  extends RecyclerView.Adapter<RecyclerView.ViewHolder
                     nagDialog.setCancelable(false);
                     nagDialog.setContentView(R.layout.preview_image);
                     Button btnClose = (Button)nagDialog.findViewById(R.id.btnIvClose);
-                    ImageView ivPreview = (ImageView)nagDialog.findViewById(R.id.iv_preview_image);
-                    Picasso.with(context).load(span.getSource()).placeholder(context.getResources().getDrawable(R.drawable.placeholder)).error(context.getResources().getDrawable(R.drawable.placeholder)).into(ivPreview);
 
-                    //Implementacion de vista con reproductor para los videos. Deberia hacer un refactor del codigo ya mismo...
+                    ImageView ivPreview = (ImageView)nagDialog.findViewById(R.id.iv_preview_image);
                     YouTubePlayerView youTubePlayerView = nagDialog.findViewById(R.id.youtube_player_view);
-                    ((AppCompatActivity)context).getLifecycle().addObserver(youTubePlayerView);
-                    youTubePlayerView.initialize(new YouTubePlayerInitListener() {
-                        @Override
-                        public void onInitSuccess(final YouTubePlayer initializedYouTubePlayer) {
-                            initializedYouTubePlayer.addListener(new AbstractYouTubePlayerListener() {
-                                @Override
-                                public void onReady() {
-                                    String videoId = "6JYIGclVQdw";
-                                    initializedYouTubePlayer.loadVideo(videoId, 0);
-                                }
-                            });
-                        }
-                    }, true);
+
+                    //Comprueba que sea un video de youtube o un imagen
+                    if(span.getSource().startsWith("http://img.youtube.com/vi/")) {
+                        //Implementacion de vista con reproductor para los videos. Deberia hacer un refactor del codigo ya mismo...
+                        ivPreview.setVisibility(View.GONE);
+                        youTubePlayerView.setVisibility(View.VISIBLE);
+                        ((AppCompatActivity) context).getLifecycle().addObserver(youTubePlayerView);
+                        youTubePlayerView.initialize(new YouTubePlayerInitListener() {
+                            @Override
+                            public void onInitSuccess(final YouTubePlayer initializedYouTubePlayer) {
+                                initializedYouTubePlayer.addListener(new AbstractYouTubePlayerListener() {
+                                    @Override
+                                    public void onReady() {
+                                        String videoId = splitIdVideo(span.getSource());
+                                        initializedYouTubePlayer.loadVideo(videoId, 0);
+                                    }
+                                });
+                            }
+                        }, true);
+                    }else{
+                        ivPreview.setVisibility(View.VISIBLE);
+                        youTubePlayerView.setVisibility(View.GONE);
+                        Picasso.with(context).load(span.getSource()).placeholder(context.getResources().getDrawable(R.drawable.placeholder)).error(context.getResources().getDrawable(R.drawable.placeholder)).into(ivPreview);
+                    }
 
                     btnClose.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -239,6 +248,10 @@ public class ThreadAdapter  extends RecyclerView.Adapter<RecyclerView.ViewHolder
         }
     }
 
+    private String splitIdVideo(String url){
+        String[] pr = url.split("/");
+        return pr[4];
+    }
     //Metodo para cambiar el color de fondo de las citas. Mejor no preguntar que hace =S
     private void replaceQuoteSpans(Spannable spannable, String spanned) {
         QuoteSpan[] quoteSpans = spannable.getSpans(0, spanned.length(), QuoteSpan.class);
