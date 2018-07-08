@@ -8,4 +8,6 @@
     <dimen name="navigation_drawer_header_height">178dp</dimen>
     <dimen name="navigation_drawer_header_marginBottom">8dp</dimen>
     <dimen name="navigation_drawer_header_profile_marginTop">16dp</dimen>
+    <dimen name="logo_padding_bottom">20dp</dimen>
+    <dimen name="logo_padding_top">20dp</dimen>
 </resources>

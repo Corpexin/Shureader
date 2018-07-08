@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.MenuItemCompat;
@@ -42,6 +44,7 @@ public class ContentFragment extends Fragment implements ContentAdapter.OnItemCl
     private LinearLayoutManager mLayoutManager;
     private ProgressBar pbAnillo;
     private SwipeRefreshLayout swlPanel;
+    private FloatingActionButton fabNewThread;
 
     public ContentFragment() {
         // Required empty public constructor
@@ -76,6 +79,7 @@ public class ContentFragment extends Fragment implements ContentAdapter.OnItemCl
             mEmptyView = (TextView) getView().findViewById(R.id.lblEmpty);
             lstContent = (RecyclerView) getView().findViewById(R.id.lstContent);
             pbAnillo = (ProgressBar) getView().findViewById(R.id.pbAnillo);
+            fabNewThread = (FloatingActionButton) getView().findViewById(R.id.fab_new_thread);
 
 
             ImageView ivLogo = (ImageView) getView().findViewById(R.id.ivLogo);
@@ -83,6 +87,12 @@ public class ContentFragment extends Fragment implements ContentAdapter.OnItemCl
             Toolbar.LayoutParams layoutParams=new Toolbar.LayoutParams(200, 200);
             layoutParams.gravity = Gravity.CENTER_HORIZONTAL;
             ivLogo.setLayoutParams(layoutParams);
+
+            fabNewThread.setOnClickListener(new View.OnClickListener() {
+                @Override public void onClick(View v) {
+                    mListener.loadRespondFragment();
+                }
+            });
 
             getData();
         }
@@ -146,7 +156,7 @@ public class ContentFragment extends Fragment implements ContentAdapter.OnItemCl
     @Override
     public void onItemClick(View view, ContentItem item, int position) {
         //Cargamos hilo seleccionado con la url que recuperamos
-        mListener.openThreadFragment(item.getItemUrl(), item.getThreadTitle());
+        mListener.loadThreadFragment(item.getItemUrl(), item.getThreadTitle());
     }
 
     @Override
@@ -236,7 +246,9 @@ public class ContentFragment extends Fragment implements ContentAdapter.OnItemCl
         void openDrawer();
         ArrayList<ContentItem> getData(String url, int type);
 
-        void openThreadFragment(String itemUrl, String itemName);
+        void loadThreadFragment(String itemUrl, String itemName);
+
+        void loadRespondFragment();
     }
 
 

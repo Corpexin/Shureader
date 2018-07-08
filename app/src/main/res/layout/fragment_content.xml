@@ -27,7 +27,8 @@
              android:layout_height="wrap_content"
              android:contentDescription="@string/image"
              android:src="@drawable/logorees"
-             android:padding="20dp"
+             android:paddingTop="@dimen/logo_padding_top"
+             android:paddingBottom="@dimen/logo_padding_bottom"
              android:visibility="visible"
              />
 
@@ -70,4 +71,16 @@
        android:layout_centerVertical="true"
        android:layout_centerHorizontal="true"
        android:indeterminate="false" />
+
+   <android.support.design.widget.FloatingActionButton
+       android:id="@+id/fab_new_thread"
+       android:layout_height="wrap_content"
+       android:layout_width="wrap_content"
+       app:layout_anchor="@id/lstContent"
+       app:layout_anchorGravity="bottom|right|end"
+       android:src="@drawable/ic_new_thread"
+       android:layout_marginEnd="16dp"
+       android:layout_marginBottom="16dp"
+       app:layout_behavior="corpex.shureader.utils.ScrollAwareFABBehavior"/>
+
 </android.support.design.widget.CoordinatorLayout>

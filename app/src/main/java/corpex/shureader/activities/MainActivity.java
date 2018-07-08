@@ -23,12 +23,13 @@ import corpex.shureader.dataModels.ContentItem;
 import corpex.shureader.dataModels.ThreadPage;
 import corpex.shureader.fragments.ContentFragment;
 import corpex.shureader.fragments.LoginFragment;
+import corpex.shureader.fragments.RespondFragment;
 import corpex.shureader.fragments.ThreadFragment;
 import corpex.shureader.utils.Constants;
 import corpex.shureader.utils.WebConnections;
 
 
-public class MainActivity extends AppCompatActivity implements LoginFragment.OnLoginFragmentListener, ContentFragment.OnContentFragmentListener, ThreadFragment.OnThreadFragmentListener{
+public class MainActivity extends AppCompatActivity implements LoginFragment.OnLoginFragmentListener, ContentFragment.OnContentFragmentListener, ThreadFragment.OnThreadFragmentListener, RespondFragment.OnRespondFragmentListener{
     private FragmentManager gestor;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
@@ -76,6 +77,12 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
                 navigationView.setVisibility(View.VISIBLE);
                 drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
                 gestor.beginTransaction().replace(R.id.flContent, threadFragment).commitAllowingStateLoss();
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR); //impide girar en ese fragmento
+                break;
+            case Constants.FRAGMENT_RESPOND:
+                navigationView.setVisibility(View.VISIBLE);
+                drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
+                gestor.beginTransaction().replace(R.id.flContent, new RespondFragment()).commitAllowingStateLoss();
                 setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR); //impide girar en ese fragmento
                 break;
             default:
@@ -133,7 +140,7 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
 
 
     @Override
-    public void openThreadFragment(String itemUrl, String itemName) {
+    public void loadThreadFragment(String itemUrl, String itemName) {
         Bundle argumentos = new Bundle();
         argumentos.putString(Constants.ARG_URL, itemUrl);
         argumentos.putString(Constants.ARG_NAME, itemName);
@@ -145,6 +152,10 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
         loadFragment(Constants.FRAGMENT_CONTENT, null);
     }
 
+    @Override
+    public void loadRespondFragment() {
+        loadFragment(Constants.FRAGMENT_RESPOND, null);
+    }
 
     @Override
     public void openDrawer() {

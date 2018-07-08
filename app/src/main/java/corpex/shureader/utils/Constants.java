@@ -9,6 +9,7 @@ public class Constants {
     public static final int FRAGMENT_LOGIN = 1;
     public static final int FRAGMENT_CONTENT = 2;
     public static final int FRAGMENT_THREAD = 3;
+    public static final int FRAGMENT_RESPOND = 4;
 
     //RESPONSES
     public static final int RESULT_LOGGED = 1;

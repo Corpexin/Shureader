@@ -1,0 +1,4 @@
+<resources>
+	<dimen name="logo_padding_bottom">30dp</dimen>
+	<dimen name="logo_padding_top">14dp</dimen>
+</resources>
